@@ -1,6 +1,7 @@
 import { SyntheticEvent, useState } from "react";
 import { User } from "../models/user";
 import { Navigate } from "react-router-dom";
+import {authenticate} from "../remote/services/session-service"
 
 interface ILoginProps{
     currentUser: User | undefined,
@@ -8,11 +9,6 @@ interface ILoginProps{
 }
 
 export default function Login(props: ILoginProps) {
-
-    // let email = '';
-    // let password = '';
-    // let errorMessage = '';
-
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -22,24 +18,20 @@ export default function Login(props: ILoginProps) {
         setEmail((e.target as HTMLInputElement).value); // e.target could be any element, cast as HTMLInput to retrieve the value
         // console.log(`email is: ${email}`);
     }
+    let updatePassword = (e: SyntheticEvent) => {
+        setPassword((e.target as HTMLInputElement).value);
+    }
 
-    let login = async (e: SyntheticEvent) => {
-        // console.log(`email: ${email} and password: ${password}`);
+    let login = async () => {
         if(email && password){
             setErrorMessage('');
-            // console.log(`email: ${email} and password: ${password}`);
-
             try{
-                let response = await fetch('http://localhost:5500/auth/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type' : 'application/json'
-                    }, 
-                    body: JSON.stringify({email, password})
-                });
+                let response = await authenticate({email, password});
 
                 if(response.status === 201){
-                    props.setCurrentUser(await response.json());
+                    let data: User = response.data;
+                    props.setCurrentUser(data);
+                    sessionStorage.setItem('token', data.token);
                 } else {
                     setErrorMessage('Credentials invalid.');
                 }
@@ -52,7 +44,7 @@ export default function Login(props: ILoginProps) {
     }
 
     return (
-        props.currentUser ? // if
+        props.currentUser ? 
         <>
             <Navigate to="/"/>
         </>
@@ -63,7 +55,7 @@ export default function Login(props: ILoginProps) {
                 <input type="text" id="login-email" placeholder="Enter your email" onChange={updateEmail}/>
                 <br /><br />
                 <input type="text" id="login-password" placeholder="Enter your password" onChange={(e) => {
-                    setPassword(e.target.value);
+                    updatePassword(e.target.value);
                     }}/>
                 <br /><br />
                 <button id="login-button" onClick={login}>Login</button>                
@@ -73,4 +65,4 @@ export default function Login(props: ILoginProps) {
             </div>
         </>
     );
-}
+                }
