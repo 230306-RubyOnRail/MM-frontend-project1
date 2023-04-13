@@ -4,7 +4,7 @@ import { Reimbursement } from '../models/reimbursement';
 import axios from 'axios';
 
 
-const SubmitReimbursement: React.FC = () => {
+const SubmitReimbursements: React.FC = () => {
   const [description, setDescription] = useState('');
   const [status, setStatus] = useState('');
   const [amount, setAmount] = useState(0);
@@ -19,7 +19,11 @@ const SubmitReimbursement: React.FC = () => {
       user_id,
     };
     try {
+<<<<<<< HEAD:project1-frontend/src/components/SubmitReimbursement.tsx
       await axios.post('(PUT THE URL HERE)', reimbursement);
+=======
+      await axios.post('OUR URL HERE', reimbursement);
+>>>>>>> main:project1-frontend/src/components/SubmitReimbursements.tsx
       // Handle successful submission here
     } catch (error) {
       // Handle error here
@@ -69,4 +73,4 @@ const SubmitReimbursement: React.FC = () => {
   );
 };
 
-export default SubmitReimbursement;
+export default SubmitReimbursements;

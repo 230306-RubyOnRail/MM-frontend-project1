@@ -11,3 +11,10 @@ export class Reimbursement {
         this.user_id = user_id;
     }
 }
+
+export interface Reimbursement {
+    description: string;
+    status: string;
+    amount: number;
+    user_id: number;
+}

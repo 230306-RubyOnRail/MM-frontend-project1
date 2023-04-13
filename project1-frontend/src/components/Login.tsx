@@ -1,7 +1,7 @@
 import { SyntheticEvent, useState } from "react";
 import { User } from "../models/user";
 import { Navigate } from "react-router-dom";
-import {authenticate} from "../remote/services/session-service"
+import {authenticate} from "../remote/services/session-service";
 
 interface ILoginProps{
     currentUser: User | undefined,
