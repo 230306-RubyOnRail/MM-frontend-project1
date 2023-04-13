@@ -1,14 +1,13 @@
-import React, { useContext } from "react";
-import MyContext from "./Context";
-export interface;
+import React, { useContext } from "../react";
+import MyContext, { AppContext } from "./Context";
 
 function Child({setCurrentUser}){
-    const state = useContext(MyContext);
+    const state: AppContext = useContext(MyContext);
     return(
         <div>
-            <button onClick=>setCurrentUser({name:'timmy'})Login</button>
+            <button onClick = {() => setCurrentUser({name:'timmy'})}>Login</button>
         </div>
-    )
+    );
 }
 
-export defualt Child;
+export default Child;
