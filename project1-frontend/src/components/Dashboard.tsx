@@ -4,10 +4,10 @@ import {useContext} from "react";
 import MyContext from './Context';
 
 interface IDashboardProps {
-    setCurrentUser: (user: any) => void
+    currentUser: User | undefined
 }
 
-export default function Dashboard({setCurrentUser}: IDashboardProps) {
+export default function Dashboard(props: IDashboardProps) {
     const { user } = useContext(MyContext);
     return (
         user?

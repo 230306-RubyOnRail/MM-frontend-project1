@@ -6,11 +6,6 @@ import MyContext from './Context';
 
 interface IReimbursementsProps {
     setCurrentUser: (user: any) => void;
-    id: number;
-    description: string;
-    type: string;
-    amount: number;
-    status:string;
 }
 
 export function SubmitReimbursements({setCurrentUser}: IReimbursementsProps){

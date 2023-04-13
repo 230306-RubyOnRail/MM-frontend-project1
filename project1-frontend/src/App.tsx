@@ -6,6 +6,7 @@ import MyContext,{AppContext} from './components/Context';
 import { User } from './models/user';
 import { Reimbursement } from "./models/reimbursement";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { SubmitReimbursements } from './components/reimbursements';
 
 function App() {
   const [principal, setPrincipal] = useState<User>();
@@ -29,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard currentUser={principal} />} />
         <Route path="/login" element={<Login setCurrentUser={setPrincipal} />} />
+        <Route path="/submit" element={<SubmitReimbursements setCurrentUser={setPrincipal} />} />
       </Routes>
     </BrowserRouter>
   );
