@@ -19,7 +19,7 @@ const SubmitReimbursement: React.FC = () => {
       user_id,
     };
     try {
-      await axios.post('https://api.example.com/reimbursements', reimbursement);
+      await axios.post('(PUT THE URL HERE)', reimbursement);
       // Handle successful submission here
     } catch (error) {
       // Handle error here
