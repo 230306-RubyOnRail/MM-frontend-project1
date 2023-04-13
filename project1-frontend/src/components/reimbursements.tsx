@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { getReimbursement } from "../remote/services/reimbursement-service";
 import currentUser from "./Login"
 
-interface IReimbursementProps {
+interface IReimbursementsProps {
     currentUser: User | undefined
 }
 
-export default function Reimbursements(props:IReimbursementProps){
+export default function Reimbursements(props:IReimbursementsProps){
 const [reimbursements, setReimbursement] = useState();
 
 useEffect(() => {

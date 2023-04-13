@@ -1,5 +1,5 @@
 export class User {
-    id: number
+    id?: number
     name: string;
     email: string;
     password_digest: string;
@@ -17,9 +17,10 @@ export class User {
 }
 
 export interface User {
+    id?: number;
     name: string;
     email: string;
     password_digest: string;
     role: number;
-    id: number;
+    
 }
