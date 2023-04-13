@@ -10,22 +10,11 @@ interface IReimbursementsProps {
 export default function Reimbursements(props:IReimbursementsProps){
 const [reimbursements, setReimbursement] = useState();
 
-useEffect(() => {
-getReimbursements();    
+useEffect(() => {   
 return function () {
 
 }
 }, []);
-
-let getReimbursements = async () => {
-    if(props.currentUser) {
-        let response = await getReimbursements(props.currentUser.id)
-    }
-    if (Response.status === 200){
-        setReimbursement(Response.data);
-
-    }
-}
 
 }
 

@@ -1,10 +1,12 @@
 export class Reimbursement {
+    id: number;
     description: string;
     status: string;
     amount: number;
     user_id: number;
 
-    constructor(description: string, status: string, amount: number, user_id: number){
+    constructor(id: number, description: string, status: string, amount: number, user_id: number){
+        this.id = id;
         this.description = description;
         this.status = status;
         this.amount = amount;
@@ -12,9 +14,11 @@ export class Reimbursement {
     }
 }
 
-export interface Reimbursement {
+
+export interface Reimbursement{
+    id: number;
     description: string;
-    status: string;
+    type: string;
     amount: number;
-    user_id: number;
+    status:string;
 }

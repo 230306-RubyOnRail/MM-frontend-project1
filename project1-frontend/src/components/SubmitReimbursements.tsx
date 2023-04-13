@@ -12,18 +12,8 @@ const SubmitReimbursements: React.FC = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const reimbursement: Reimbursement = {
-      description,
-      status,
-      amount,
-      user_id,
-    };
     try {
-<<<<<<< HEAD:project1-frontend/src/components/SubmitReimbursement.tsx
-      await axios.post('(PUT THE URL HERE)', reimbursement);
-=======
-      await axios.post('OUR URL HERE', reimbursement);
->>>>>>> main:project1-frontend/src/components/SubmitReimbursements.tsx
+      await axios.post('(PUT THE URL HERE)', Reimbursement);
       // Handle successful submission here
     } catch (error) {
       // Handle error here
