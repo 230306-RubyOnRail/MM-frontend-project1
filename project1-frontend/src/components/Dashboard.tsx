@@ -8,15 +8,10 @@ interface IDashboardProps {
 }
 
 export default function Dashboard(props: IDashboardProps) {
-    const { user } = useContext(MyContext);
     return (
-        user?
-            <>
-                Hello {user?.name} from Dashboard!
-            </>
-            :
-            <>
-                <Navigate to="/login" />
-            </>
+        <>
+            Hello and welcome to the reimbursement app!
+        </>
+
     );
 }
