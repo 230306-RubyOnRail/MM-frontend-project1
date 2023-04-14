@@ -11,7 +11,6 @@ export default function Header() {
 
     return (
         <header style={headerStyle} >
-            <div></div>
             <h1>Reimbursement app</h1>
         </header>
     );

@@ -8,7 +8,8 @@ interface IDashboardProps {
 export default function Dashboard(props: IDashboardProps) {
     return (
         <>
-            Hello and welcome to the reimbursement app!
+            <br></br>
+            <h3>Hello and welcome to the reimbursement app!</h3>
         </>
 
     );

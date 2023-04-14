@@ -51,7 +51,7 @@ export default function SubmitReimbursements(props: IUserProps){
         </>
         :
         <> 
-        <p>Submit a reimbursement!</p>
+        <p>Create a new user!</p>
             <div>
             <input type="text" id="new-user-name" placeholder="Enter the name" onChange={updateName}/>
                 <br /><br />
