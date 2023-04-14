@@ -1,7 +1,6 @@
 import { User } from "../models/user";
 import { SyntheticEvent, useContext, useEffect, useState } from "react";
-import { deleteReimbursement, getReimbursement, submitReimbursement } from "../remote/services/reimbursement-service";
-import MyContext from './Context';
+import { deleteReimbursement} from "../remote/services/reimbursement-service";
 import { Navigate } from "react-router-dom";
 
 interface IReimbursementsProps {
@@ -17,7 +16,9 @@ interface IReimbursementsProps {
   }
 
   const handleDelete = async() => {
-    await deleteReimbursement(`http://localhost:3000/reimbursements/${id}`);
+    console.log("this is the id "+ id)
+    const user_id = '/?user_id='+props.currentUser?.user_id
+    await deleteReimbursement(id,user_id);
   }
   
   return (

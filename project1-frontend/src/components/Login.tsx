@@ -2,19 +2,15 @@ import { SyntheticEvent, useState } from "react";
 import { User } from "../models/user";
 import { Navigate } from "react-router-dom";
 import {authenticate} from "../remote/services/session-service";
-import React, { useContext } from "react";
-import MyContext, { AppContext } from "./Context";
 
 export interface ILoginProps {
     setCurrentUser: (user: User) => void
     currentUser: User | undefined
 }
 export default function Login(props: ILoginProps) {
-    const { user } = useContext(MyContext);
     const [email, setEmail] = useState('');
     const [password_digest, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState(''); 
-    const state: AppContext = useContext(MyContext);
     
     let updateEmail = (e: SyntheticEvent) => {
         setEmail((e.target as HTMLInputElement).value); 
@@ -45,7 +41,7 @@ export default function Login(props: ILoginProps) {
         props.currentUser?
         <>
             {console.log(props.currentUser)}
-            {<Navigate to="/submit"/>}
+            {<Navigate to="/"/>}
         </>
         :
         <>

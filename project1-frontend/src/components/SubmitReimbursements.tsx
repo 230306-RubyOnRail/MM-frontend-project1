@@ -1,7 +1,6 @@
 import { User } from "../models/user";
 import { SyntheticEvent, useContext, useEffect, useState } from "react";
-import { deleteReimbursement, getReimbursement, submitReimbursement } from "../remote/services/reimbursement-service";
-import MyContext from './Context';
+import { submitReimbursement } from "../remote/services/reimbursement-service";
 import { Navigate } from "react-router-dom";
 
 interface IReimbursementsProps {
