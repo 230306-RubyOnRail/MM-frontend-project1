@@ -1,6 +1,6 @@
 import { User } from "../models/user";
 import { SyntheticEvent, useContext, useEffect, useState } from "react";
-import { getReimbursement, submitReimbursement } from "../remote/services/reimbursement-service";
+import { deleteReimbursement, getReimbursement, submitReimbursement } from "../remote/services/reimbursement-service";
 import MyContext from './Context';
 import { Navigate } from "react-router-dom";
 
@@ -43,7 +43,7 @@ export default function SubmitReimbursements(props: IReimbursementsProps){
             }
         </>
         :
-        <>       
+        <> 
         <p>Submit a reimbursement!</p>
             <div>
                 <input type="text" id="submit-description" placeholder="Enter the description" onChange={updateDescription}/>
@@ -55,35 +55,3 @@ export default function SubmitReimbursements(props: IReimbursementsProps){
         </>
     );
   }
-
-  // export function DeleteReimbursement(props: IReimbursementsProps) {
-  //   const [id, setId] = useState(0);
-  //   const { reimbursements } = useContext(MyContext);
-  
-  //   let updateId = (e: SyntheticEvent) => {
-  //       setId(Number(e.target as HTMLInputElement).valueOf); 
-  //   }
-
-  //   const handleDelete = async () => {
-  //     // Find the reimbursement from the current user's reimbursements
-  //     const reimbursement = reimbursements.find(
-  //       (reimbursement) => reimbursement.id === id
-  //     );
-  
-  //     if (reimbursement) {
-  //       // Delete the reimbursement
-  //       await submitReimbursement(`http://localhost:3000/reimbursements/${id}/?user_id=${props.currentUser?.id}`);
-  //     }
-  //   };
-  
-  //   return (
-  //       <>
-  //           <p>Delete a reimbursement!</p>
-  //           <div>
-  //               <input type="number" id="delete-reimbursement" placeholder="Enter the id of the reimbursement you want to delete" onChange={updateId}/>
-  //               <br /><br />
-  //               <button onClick={handleDelete}>Delete Reimbursement</button>;             
-  //           </div>
-  //       </>
-  //   );
-  // }

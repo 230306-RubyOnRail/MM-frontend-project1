@@ -7,7 +7,8 @@ import Nav from './components/Nav';
 import Header from './components/Header';
 import { Reimbursement } from "./models/reimbursement";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import SubmitReimbursements from './components/Reimbursements';
+import SubmitReimbursements from './components/SubmitReimbursements';
+import DeleteReimbursements from './components/DeleteReimbursement';
 
 function App() {
   const [principal, setPrincipal] = useState<User>();
@@ -22,7 +23,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard currentUser={principal} />} />
         <Route path="/login" element={<Login currentUser={principal} setCurrentUser={setPrincipal} />} />
-        <Route path="/reimbursements" element={<SubmitReimbursements currentUser={principal} setCurrentUser={setPrincipal} />} />
+        <Route path="/submit" element={<SubmitReimbursements currentUser={principal} setCurrentUser={setPrincipal} />} />
+        <Route path="/delete" element={<DeleteReimbursements currentUser={principal} setCurrentUser={setPrincipal} />} />
       </Routes>
     </BrowserRouter>
     </>

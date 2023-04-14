@@ -6,7 +6,8 @@ export default function Nav() {
             <ul>
                 <li><Link to="">Dashboard</Link></li>
                 <li><Link to="/login">Login</Link></li>
-                <li><Link to="/reimbursements">SubmitReimbursements</Link></li>
+                <li><Link to="/submit">SubmitReimbursements</Link></li>
+                <li><Link to="/delete">DeleteReimbursements</Link></li>
             </ul>
         </nav>
     );

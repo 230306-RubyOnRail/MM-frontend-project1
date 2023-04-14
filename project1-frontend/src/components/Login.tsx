@@ -45,7 +45,7 @@ export default function Login(props: ILoginProps) {
         props.currentUser?
         <>
             {console.log(props.currentUser)}
-            {<Navigate to="/reimbursements"/>}
+            {<Navigate to="/submit"/>}
         </>
         :
         <>

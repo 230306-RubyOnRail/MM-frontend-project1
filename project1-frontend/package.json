@@ -12,11 +12,8 @@
     "@types/react-dom": "^18.0.11",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.3.5",
-<<<<<<< HEAD
     "node": "^19.8.1",
-=======
     "package.json": "^2.0.1",
->>>>>>> 3046f2484e1797c132908d4ca1116239c7098da0
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
